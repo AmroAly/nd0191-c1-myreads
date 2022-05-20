@@ -1,4 +1,12 @@
-const Book = ({ book }) => {
+import { update } from "../BooksAPI";
+
+const Book = ({ book, onBooksUpdate }) => {
+  const onSelectChangeHandler = async (e) => {
+    const selectedShelf = e.target.value;
+    onBooksUpdate(book, selectedShelf);
+    await update(book, selectedShelf);
+  };
+
   return (
     <li>
       <div className="book">
@@ -12,7 +20,7 @@ const Book = ({ book }) => {
             }}
           ></div>
           <div className="book-shelf-changer">
-            <select value={book.shelf}>
+            <select value={book.shelf} onChange={onSelectChangeHandler}>
               <option value="none" disabled>
                 Move to...
               </option>
