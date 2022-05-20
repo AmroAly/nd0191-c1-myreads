@@ -1,18 +1,25 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
-const SearchBar = () => {
-  const [showSearchPage, setShowSearchpage] = useState(false);
+const SearchBar = ({ onChangeInput }) => {
+  const [query, setQuery] = useState("");
+  const onChangeInputHandler = (e) => {
+    setQuery(e.target.value.trim());
+    query && onChangeInput(query);
+  };
 
   return (
     <div className="search-books-bar">
-      <a
-        className="close-search"
-        onClick={() => setShowSearchpage(!showSearchPage)}
-      >
+      <Link className="close-search" to="/">
         Close
-      </a>
+      </Link>
       <div className="search-books-input-wrapper">
-        <input type="text" placeholder="Search by title, author, or ISBN" />
+        <input
+          type="text"
+          onChange={onChangeInputHandler}
+          placeholder="Search by title, author, or ISBN"
+          value={query}
+        />
       </div>
     </div>
   );

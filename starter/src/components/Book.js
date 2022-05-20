@@ -16,11 +16,16 @@ const Book = ({ book, onBooksUpdate }) => {
             style={{
               width: 128,
               height: 193,
-              backgroundImage: `url(${book.imageLinks.smallThumbnail})`,
+              backgroundImage: `url(${
+                book.imageLinks && book.imageLinks.smallThumbnail
+              })`,
             }}
           ></div>
           <div className="book-shelf-changer">
-            <select value={book.shelf} onChange={onSelectChangeHandler}>
+            <select
+              value={book.shelf && book.shelf}
+              onChange={onSelectChangeHandler}
+            >
               <option value="none" disabled>
                 Move to...
               </option>
@@ -32,7 +37,9 @@ const Book = ({ book, onBooksUpdate }) => {
           </div>
         </div>
         <div className="book-title">{book.title}</div>
-        <div className="book-authors">{book.authors.join(", ")}</div>
+        <div className="book-authors">
+          {book.authors && book.authors.join(", ")}
+        </div>
       </div>
     </li>
   );
