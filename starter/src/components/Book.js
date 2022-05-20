@@ -12,7 +12,7 @@ const Book = ({ book }) => {
             }}
           ></div>
           <div className="book-shelf-changer">
-            <select>
+            <select value={book.shelf}>
               <option value="none" disabled>
                 Move to...
               </option>

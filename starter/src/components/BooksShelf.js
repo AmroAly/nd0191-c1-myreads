@@ -1,21 +1,6 @@
 import Book from "./Book";
-import * as BooksAPI from "../BooksAPI.js";
-import { useEffect, useState } from "react";
 
-const BooksShelf = ({ shelf }) => {
-  const [books, setBooks] = useState([]);
-
-  useEffect(() => {
-    let mounted = false;
-    const getBooks = async () => {
-      const res = await BooksAPI.getAll();
-      setBooks(res);
-      mounted = true;
-    };
-
-    if (!mounted) getBooks();
-  }, []);
-
+const BooksShelf = ({ shelf, books }) => {
   console.log(books);
   return (
     <div className="bookshelf">
