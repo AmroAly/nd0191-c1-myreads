@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import Search from "./components/Search";
 import ShelvesList from "./components/ShelvesList";
+import { Link } from "react-router-dom";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         </div>
         <ShelvesList />
         <div className="open-search">
-          <a>Add a book</a>
+          <Link to="/search">Add a book</Link>
         </div>
       </div>
     </div>
