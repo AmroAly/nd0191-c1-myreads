@@ -7,6 +7,7 @@ const Search = () => {
   const [searchResults, setSearchResults] = useState([]);
 
   const onChangeInputHandler = async (query) => {
+    if (!query) return setSearchResults([]);
     const books = await BooksAPI.search(query, 5);
     setSearchResults(books);
   };

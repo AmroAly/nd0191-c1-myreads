@@ -2,10 +2,12 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const SearchBar = ({ onChangeInput }) => {
-  const [query, setQuery] = useState("");
+  let filterTimeout;
   const onChangeInputHandler = (e) => {
-    setQuery(e.target.value.trim());
-    query && onChangeInput(query);
+    clearTimeout(filterTimeout);
+    filterTimeout = setTimeout(() => {
+      onChangeInput(e.target.value);
+    }, 500);
   };
 
   return (
@@ -18,7 +20,6 @@ const SearchBar = ({ onChangeInput }) => {
           type="text"
           onChange={onChangeInputHandler}
           placeholder="Search by title, author, or ISBN"
-          value={query}
         />
       </div>
     </div>
