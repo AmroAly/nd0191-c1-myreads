@@ -1,12 +1,16 @@
 import { update } from "../BooksAPI";
+import { useEffect, useState } from "react";
 
 const Book = ({ book, onBooksUpdate }) => {
+  const [shelf, setShelf] = useState(book.shelf || "none");
+  const [changed, setChanged] = useState(false);
+
   const onSelectChangeHandler = async (e) => {
     const selectedShelf = e.target.value;
+    setShelf(selectedShelf);
     onBooksUpdate(book, selectedShelf);
     await update(book, selectedShelf);
   };
-
   return (
     <li>
       <div className="book">
@@ -22,11 +26,8 @@ const Book = ({ book, onBooksUpdate }) => {
             }}
           ></div>
           <div className="book-shelf-changer">
-            <select
-              value={book.shelf && book.shelf}
-              onChange={onSelectChangeHandler}
-            >
-              <option value="none" disabled>
+            <select value={shelf} onChange={onSelectChangeHandler}>
+              <option value="moveto" disabled>
                 Move to...
               </option>
               <option value="currentlyReading">Currently Reading</option>

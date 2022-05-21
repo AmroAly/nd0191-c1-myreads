@@ -5,6 +5,7 @@ import * as BooksAPI from "../BooksAPI";
 
 const Search = () => {
   const [searchResults, setSearchResults] = useState([]);
+  const [changed, setChanged] = useState(false);
 
   const onChangeInputHandler = async (query) => {
     if (!query) return setSearchResults([]);
@@ -12,7 +13,10 @@ const Search = () => {
     setSearchResults(books);
   };
 
-  const onBooksUpdate = (book, newShelf) => (book.shelf = newShelf);
+  const onBooksUpdate = (book, newShelf) => {
+    book.shelf = newShelf;
+    setChanged(!changed);
+  };
 
   const [allBooks, setAllBooks] = useState([]);
 

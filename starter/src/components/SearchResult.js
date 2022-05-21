@@ -1,8 +1,8 @@
 import Book from "./Book";
 
 const SearchResult = ({ books, onBooksUpdate, allBooks }) => {
-  allBooks.forEach((b) =>
-    books.forEach((book) => {
+  books.forEach((book) =>
+    allBooks.forEach((b) => {
       if (b.id == book.id) {
         book.shelf = b.shelf;
       }
