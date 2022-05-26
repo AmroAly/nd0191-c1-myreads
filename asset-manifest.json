@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/nd0191-c1-myreads/starter/static/css/main.21e8dfa5.chunk.css",
+    "main.js": "/nd0191-c1-myreads/starter/static/js/main.3d7b4067.chunk.js",
+    "main.js.map": "/nd0191-c1-myreads/starter/static/js/main.3d7b4067.chunk.js.map",
+    "runtime-main.js": "/nd0191-c1-myreads/starter/static/js/runtime-main.ea228fb4.js",
+    "runtime-main.js.map": "/nd0191-c1-myreads/starter/static/js/runtime-main.ea228fb4.js.map",
+    "static/js/2.960b885d.chunk.js": "/nd0191-c1-myreads/starter/static/js/2.960b885d.chunk.js",
+    "static/js/2.960b885d.chunk.js.map": "/nd0191-c1-myreads/starter/static/js/2.960b885d.chunk.js.map",
+    "index.html": "/nd0191-c1-myreads/starter/index.html",
+    "static/css/main.21e8dfa5.chunk.css.map": "/nd0191-c1-myreads/starter/static/css/main.21e8dfa5.chunk.css.map",
+    "static/js/2.960b885d.chunk.js.LICENSE.txt": "/nd0191-c1-myreads/starter/static/js/2.960b885d.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/nd0191-c1-myreads/starter/static/media/arrow-drop-down.4378492a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ea228fb4.js",
+    "static/js/2.960b885d.chunk.js",
+    "static/css/main.21e8dfa5.chunk.css",
+    "static/js/main.3d7b4067.chunk.js"
+  ]
+}
